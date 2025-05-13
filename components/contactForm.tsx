@@ -33,7 +33,9 @@ const useAppwrite = () => {
   return useMemo(() => {
     const client = new Client()
       .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
-      .setProject(process.env.PROJECT_ID!)
+      .setProject(process.env.NEXT_PUBLIC_PROJECT_ID!)
+
+    console.log("Environment variables:", process.env.NEXT_PUBLIC_PROJECT_ID)
     return new Databases(client)
   }, [])
 }
@@ -96,8 +98,8 @@ export default function ContactForm() {
     try {
       const sanitizedData = sanitizeInput(values)
       await databases.createDocument(
-        process.env.DATABASE_ID!,
-        process.env.COLLECTION_ID!,
+        process.env.NEXT_PUBLIC_DATABASE_ID!,
+        process.env.NEXT_PUBLIC_COLLECTION_ID!,
         ID.unique(),
         sanitizedData
       )

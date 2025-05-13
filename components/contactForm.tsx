@@ -17,7 +17,6 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Loader2 } from "lucide-react"
-import { useMemo } from "react"
 import DOMPurify from "dompurify"
 import { useToast } from "@/app/hooks/use-toast"
 import {
@@ -28,17 +27,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select"
-
-const useAppwrite = () => {
-  return useMemo(() => {
-    const client = new Client()
-      .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
-      .setProject(process.env.NEXT_PUBLIC_PROJECT_ID!)
-
-    console.log("Environment variables:", process.env.NEXT_PUBLIC_PROJECT_ID)
-    return new Databases(client)
-  }, [])
-}
+import { contactFormData } from "@/lib/action/abweb.form"
 
 const formSchema = z.object({
   name: z
@@ -63,7 +52,6 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const { toast } = useToast()
-  const databases = useAppwrite()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -97,13 +85,7 @@ export default function ContactForm() {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const sanitizedData = sanitizeInput(values)
-      await databases.createDocument(
-        process.env.NEXT_PUBLIC_DATABASE_ID!,
-        process.env.NEXT_PUBLIC_COLLECTION_ID!,
-        ID.unique(),
-        sanitizedData
-      )
-
+      await contactFormData(sanitizedData)
       toast({
         description: "Thank you for your message. We will get back to you soon.",
       })

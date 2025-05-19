@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Client, Databases, ID, AppwriteException } from "appwrite"
+import { AppwriteException } from "appwrite"
 
 import {
   Form,
@@ -104,7 +104,7 @@ export default function ContactForm() {
   return (
     <div className="max-w-[1000px] mx-auto py-20" id="contact">
       <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">Contact Us</h2>
-      <div className="flex justify-center border border-zinc-100 py-20 rounded-sm m-1">
+      <div className="flex justify-center border border-zinc-100 py-20 rounded-sm m-1 ">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -131,6 +131,7 @@ export default function ContactForm() {
                   </FormItem>
                 )}
               />
+
               <FormField
                 control={form.control}
                 name="email"

@@ -8,7 +8,7 @@ const Footer = () => {
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Carpet Cleaning</a>
           <a className="link link-hover">Upholstery Cleaning</a>
-          <a className="link link-hover">Hardwood Cleaning</a>
+          <a className="link link-hover">Hardwood Floor Cleaning</a>
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>

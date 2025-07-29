@@ -21,7 +21,7 @@ import {
 const Navbar = () => {
   const { setTheme } = useTheme()
   return (
-    <div className="max-w-[1200px] mx-auto ">
+    <div className="lg:pl-10 lg:pr-10 bg-blue-400 dark:bg-[#1d232a]">
       <div className="flex justify-center gap-3 items-center md:hidden px-2 py-4 border-b border-zinc-600">
         <a href="tel:+9176953712" className="btn tracking-widest text-xs h-9">
           <FaPhoneVolume />
@@ -31,7 +31,7 @@ const Navbar = () => {
           Get an Instant Quote
         </Link>
       </div>
-      <div className="md:navbar bg-white dark:bg-[#1d232a] shadow-sm border-b md:border-b-0 py-4 border-zinc-600">
+      <div className="md:navbar  dark:bg-[#1d232a] shadow-sm border-b md:border-b-0 py-4 border-zinc-600">
         <div className="flex justify-between md:justify-start md:w-[50%]">
           <div className="xl:hidden flex items-center px-2">
             <DropdownMenu>

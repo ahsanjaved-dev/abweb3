@@ -3,8 +3,7 @@
 import { motion } from "framer-motion"
 import React from "react"
 import { AuroraBackground } from "./ui/aurora-background"
-import { FaPhoneVolume } from "react-icons/fa6"
-import { Button } from "./ui/button"
+import Link from "next/link"
 
 const Hero = () => {
   return (
@@ -26,12 +25,9 @@ const Hero = () => {
           <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
             Refresh Your Carpets Today!
           </div>
-          <a href="tel:+9176953712">
-            <Button variant={"secondary"} className="h-12 w-44 border border-zinc-200">
-              <FaPhoneVolume />
-              (917)-695-3712
-            </Button>
-          </a>
+          <Link href={"/book"} className={"btn dark:bg-white dark:text-black"}>
+            Book Now
+          </Link>
         </motion.div>
       </AuroraBackground>
     </div>

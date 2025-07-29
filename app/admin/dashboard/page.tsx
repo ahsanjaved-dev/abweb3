@@ -650,8 +650,6 @@ export default function AdminDashboard() {
                   const cleanPhone = contact?.phone?.split(":")[1] || contact?.phone || "No phone"
                   const cleanAddress =
                     contact?.address?.split(":")[1] || contact?.address || "No address"
-                  const cleanUnit =
-                    contact?.unit?.split(":")[1] || contact?.address || "No Apt/Unit"
                   const cleanCity = contact?.city?.split(":")[1] || contact?.address || "No City"
                   const cleanState = contact?.state?.split(":")[1] || contact?.address || "No State"
                   const cleanZip = contact?.zip?.split(":")[1] || contact?.address || "No Zip"

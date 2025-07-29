@@ -2,22 +2,14 @@
 
 import { CheckCircle, Home, Calendar, Phone, Mail, Sparkles, Star, Heart } from "lucide-react"
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
-import { useEffect, useCallback } from "react"
-import { useBookingStore } from "@/app/store/booking-store"
+import { useEffect, useState } from "react"
 import { FadeInDiv, FadeInUp, ScaleIn, HoverButton, HoverCard } from "@/components/booking/framer"
 
 export default function ThankYouPage() {
-  const searchParams = useSearchParams()
-  const bookingId = searchParams.get("id")
-  const { reset } = useBookingStore()
-
+  const [bookingId, setBookingId] = useState<string | null>(null)
   useEffect(() => {
-    reset()
-  }, [reset])
-
-  const handleReturnHome = useCallback(() => {
-    // Could add analytics tracking here
+    const params = new URLSearchParams(window.location.search)
+    setBookingId(params.get("id"))
   }, [])
 
   return (
@@ -173,7 +165,7 @@ export default function ThankYouPage() {
             delay={1.5}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
-            <Link href="/" onClick={handleReturnHome}>
+            <Link href="/">
               <HoverButton className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
                 <Home className="w-5 h-5" />
                 <span>Return to Homepage</span>

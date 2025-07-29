@@ -787,7 +787,7 @@ export default function AdminDashboard() {
                                 Location
                               </p>
                               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                {cleanAddress}, {cleanUnit}, {cleanCity}, {cleanState} {cleanZip}
+                                {cleanAddress}, {cleanCity}, {cleanState} {cleanZip}
                               </p>
                             </div>
                           </div>

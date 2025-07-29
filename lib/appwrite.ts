@@ -468,21 +468,6 @@ export const deleteBooking = async (id: string): Promise<void> => {
   }
 }
 
-export const testConnection = async (): Promise<boolean> => {
-  try {
-    // Test database connection
-    await databases.listDocuments(DATABASE_ID, BOOKINGS_COLLECTION_ID, [Query.limit(1)])
-
-    // Test storage connection
-    await storage.listFiles(PHOTOS_BUCKET_ID, [Query.limit(1)])
-
-    return true
-  } catch (error) {
-    console.error("Appwrite connection test failed:", error)
-    return false
-  }
-}
-
 export const getStorageInfo = async () => {
   try {
     const files = await storage.listFiles(PHOTOS_BUCKET_ID)

@@ -37,7 +37,6 @@ export default function ContactPage() {
     phone: "",
     email: "",
     address: "",
-    unit: "",
     city: "",
     state: "",
     zip: "",
@@ -221,7 +220,7 @@ export default function ContactPage() {
                         onBlur={handleBlur}
                         required
                         className={getInputClassName("firstName")}
-                        placeholder="John"
+                        placeholder="James"
                       />
                       <ErrorMessage fieldName="firstName" />
                     </div>
@@ -237,7 +236,7 @@ export default function ContactPage() {
                         onBlur={handleBlur}
                         required
                         className={getInputClassName("lastName")}
-                        placeholder="Doe"
+                        placeholder="Smith"
                       />
                       <ErrorMessage fieldName="lastName" />
                     </div>
@@ -323,20 +322,6 @@ export default function ContactPage() {
                         placeholder="123 Main Street"
                       />
                       <ErrorMessage fieldName="address" />
-                    </div>
-
-                    <div>
-                      <label className="block text-slate-700 dark:text-slate-300 mb-2 font-medium">
-                        Unit / Apartment / Suite
-                      </label>
-                      <input
-                        type="text"
-                        name="unit"
-                        value={formData.unit}
-                        onChange={handleChange}
-                        className="w-full p-4 border border-slate-200/50 dark:border-slate-700/50 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-200 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400 hover:border-blue-300 dark:hover:border-blue-600 shadow-sm"
-                        placeholder="Apt 4B (optional)"
-                      />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

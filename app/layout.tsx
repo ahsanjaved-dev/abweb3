@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AB Carpet Cleaning",
-  description: "AB Carpet Cleaning",
+  description: "Refresh your carpet today",
 }
 
 export default function RootLayout({

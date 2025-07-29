@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, MotionProps } from "framer-motion"
+import { HTMLMotionProps, motion, MotionProps } from "framer-motion"
 import { ReactNode, ButtonHTMLAttributes } from "react"
 
 // Base motion wrapper components
@@ -128,7 +128,7 @@ export function HoverCard({
 }: {
   children: ReactNode
   className?: string
-} & MotionProps) {
+} & HTMLMotionProps<"div">) {
   return (
     <motion.div
       className={className}

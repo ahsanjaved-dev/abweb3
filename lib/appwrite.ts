@@ -66,7 +66,7 @@ const createAppwriteClient = () => {
   try {
     const client = new Client()
       .setEndpoint("https://cloud.appwrite.io/v1")
-      .setProject(requiredEnvVars.PROJECT_ID!)
+      .setProject(process.env.NEXT_PUBLIC_PROJECT_ID!)
 
     return client
   } catch (error) {
